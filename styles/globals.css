@@ -2,18 +2,6 @@
     transition: 0.2s ease-in-out;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:wght@300;400;500;700&display=swap');
-
-@font-face {
-  font-family: 'Ubuntu';
-  src: url('/Ubuntu/Ubuntu-Regular.ttf');
-  font-style: medium;
-  font-weight: normal;
-  font-display: swap;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-

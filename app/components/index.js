@@ -1,4 +1,4 @@
-import Nav from "./Nav";
+import Btn from "./Btn";
 import Container from "./Container";
 
-export { Nav, Container }
+export { Btn, Container }

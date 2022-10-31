@@ -18,8 +18,7 @@ module.exports = {
 			},
 		},
 		fontFamily: {
-			'sans': ['Ubuntu', 'sans-serif'],
-			'condensed': ['Ubuntu Condensed', 'sans-serif']
+			'sans': ['Ubuntu', 'sans-serif']
 		},
 	},
 	plugins: [],

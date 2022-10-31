@@ -1,13 +1,13 @@
 import React from 'react'
-import { Nav } from './components'
+import Bar from './components/Bar'
+import Hero from './components/Hero'
 
 const page = () => {
 
   return (
-    <div className='bg-mx-200 p-2 flex gap-4 uppercase'>
-      <Nav title='home' />
-      <Nav title='projects' />
-      <Nav title='about' />
+    <div className='bg-mx-200'>
+      <Hero />
+      <Bar />
     </div>
   )
 }
