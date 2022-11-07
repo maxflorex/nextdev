@@ -1,0 +1,20 @@
+import { GraphQLClient, gql } from 'graphql-request';
+
+export const hygraph = new GraphQLClient(
+  'https://api-us-east-1.hygraph.com/v2/cl9rtt3hy2h0101ted82d2cxo/master',
+  {
+    headers: {
+      Authorization: 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImdjbXMtbWFpbi1wcm9kdWN0aW9uIn0.eyJ2ZXJzaW9uIjozLCJpYXQiOjE2Njc2NTI1NDIsImF1ZCI6WyJodHRwczovL2FwaS11cy1lYXN0LTEuaHlncmFwaC5jb20vdjIvY2w5cnR0M2h5MmgwMTAxdGVkODJkMmN4by9tYXN0ZXIiLCJtYW5hZ2VtZW50LW5leHQuZ3JhcGhjbXMuY29tIl0sImlzcyI6Imh0dHBzOi8vbWFuYWdlbWVudC5ncmFwaGNtcy5jb20vIiwic3ViIjoiNTE0MWFlNDQtM2IwZi00Zjc2LWEwZTAtYjRiZWM0ZTAzMzEyIiwianRpIjoiY2xhM3g5bDJzMzR5eDAxdXA2cmhuaGk5OSJ9.p1-lry1WqD0JOenjAdpHUQs2G4fynMgeB9Jjscg1JMpnuDzQP9O5LMCMz_24iD8n6WfOOikw4Nv5P4zrV08cwS5wbWSH0YpfTwEjGZitgEIwLL_sAz-Qydu7OintlT-UYhXOn8fM1_4zmpL4quQ2YDWibyJeRO3fjQ3Pds69I5QKrFsk4tSmNm1OXFj25ImUlA_PXO5S_KQid4G3joFylRXvWjOPqhTy2KIeCgtT9_Sp2S8OvcK0AQt3jw7viVa8z639xFZFVJ67lffi5sPtC3vBy41RZ9LMgl0CdOx8tEVKCkDHAwN1FZF5BwjhZyLkYCMF63mhNN6jDLuUF3XuiuoLPJ3QlHduBoLLW5WGmTIR4H35bQPcRa-NDxd7kHHUAp8kwWzYpO6JXwv7S-Czs_DgXiuFAnpAdyXYKkrMTz3V1I6_Mm1RPqKZmoKZ4Xw2SkciilpIxutA0s1LyJrJKjQ0Wc54oGkABlRLMNOjdbo5D-hIJY_A8bH9FYsNGqVyz1No7WkDWmaJHWEzxxkU4foLIBKTuJHAsI04FwJvdNZKL-9uev58cg_xatf6JIbGM0VpAPuIof2TWH4--DkAPfmXMQv2dlAHL3S1CyuKQifHRhNk6GS85TWZaW6T4CUbEfltygm8TB8VdOfeL8HNv5GStyx-n3PnC9Ox-ch_U0E'
+
+    }
+  }
+);
+
+
+export const PROJECTS = gql`
+{
+  projects {
+    id
+  }
+}
+`
