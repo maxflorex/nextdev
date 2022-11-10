@@ -16,6 +16,19 @@ export const PROJECTS = gql`
 {
   projects {
     id
+    title
+    github
+    url
+    banner {
+      url
+    }
+    webMockups {
+      url
+    }
+    mobileMockups {
+      url
+    }
+    slug
   }
 }
 `

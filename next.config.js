@@ -4,7 +4,11 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     appDir: true
-  }
+  },
+    images: {
+    domains: ["media.graphassets.com"],
+    unoptimized: true
+  },
 }
 
 module.exports = nextConfig
