@@ -16,6 +16,9 @@ module.exports = {
 					500: '#05396B'
 				},
 			},
+			backgroundImage: {
+				'subtle-pattern': "url('/white-waves.png')"
+			}
 		},
 		fontFamily: {
 			'sans': ['Ubuntu', 'sans-serif']
