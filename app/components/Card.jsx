@@ -2,6 +2,7 @@ import React from 'react';
 import Btn from './Btn';
 import Container from './Container';
 import Gallery from './Gallery';
+import Icon from './Icon';
 import Title from './Title';
 
 const Card = ({ item }) => {
@@ -16,8 +17,8 @@ const Card = ({ item }) => {
                         <Title>{item.title}</Title>
                         <p>- Web App -</p>
                         <div className="flex justify-end mt-2 gap-2">
-                            <i className="ri-window-line p-2 hover:text-mx-400 text-mx-500 cursor-pointer" />
-                            <i className="ri-code-line p-2 hover:text-mx-400 text-mx-500 cursor-pointer" />
+                            <Icon icon="window" />
+                            <Icon icon="code" />
                         </div>
                     </div>
                     <div className="flex justify-end">
