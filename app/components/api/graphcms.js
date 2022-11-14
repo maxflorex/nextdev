@@ -19,6 +19,9 @@ export const PROJECTS = gql`
     title
     github
     url
+    screenMockups {
+      url
+    }
     banner {
       url
     }

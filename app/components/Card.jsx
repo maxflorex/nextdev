@@ -1,9 +1,6 @@
 import React from 'react';
-import Btn from './Btn';
-import Container from './Container';
 import Gallery from './Gallery';
-import Icon from './Icon';
-import Title from './Title';
+import { Container, Title, Icon, Btn } from '../components';
 
 const Card = ({ item }) => {
     return (
