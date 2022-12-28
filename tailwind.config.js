@@ -9,11 +9,11 @@ module.exports = {
 		extend: {
 			colors: {
 				'mx': {
-					100: '#EDF5E0',
-					200: '#8DE4AF',
-					300: '#5CDB94',
-					400: '#389583',
-					500: '#05396B'
+					100: '#F8F8F8',
+					200: '#DBDBDB',
+					300: '#61EFDC',
+					400: '#30B4AC',
+					500: '#242424'
 				},
 			},
 			backgroundImage: {
@@ -21,8 +21,8 @@ module.exports = {
 			}
 		},
 		fontFamily: {
-			'sans': ['Ubuntu', 'sans-serif']
+			sans : ['var(--font-space)']
 		},
 	},
 	plugins: [],
-}
+} 
