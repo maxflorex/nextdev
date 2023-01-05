@@ -5,16 +5,26 @@ import Social from './style/Social';
 const Intro = () => {
     return (
         <Container>
-            <div className="flex justify-between items-center">
-                <div className="flex flex-col">
+            <div className="grid grid-cols-10 gap-6 items-center">
+                <span className="col-span-1 border-t-2 border-mx-500 h-2" />
+                <div className="flex flex-col col-span-5">
                     <h1>Recent Projects</h1>
                     <p>Crafted with love</p>
                 </div>
 
-                <div className="flex flex-col items-end gap-4">
-                    <Social name='LinkedIn' />
-                    <Social name='Github' />
-                    <Social name='Twitter' />
+                <div className="flex flex-col items-end gap-4 col-span-4">
+                    <Social
+                        name="LinkedIn"
+                        link="https://www.linkedin.com/in/maxfloresdev"
+                    />
+                    <Social
+                        name="Github"
+                        link="https://www.github.com/maxflorex"
+                    />
+                    <Social
+                        name="Twitter"
+                        link="https://twitter.com/max01011001"
+                    />
                 </div>
             </div>
         </Container>

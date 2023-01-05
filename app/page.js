@@ -9,6 +9,7 @@ import ProjectList from './components/ProjectList'
 import { hygraph, PROJECTS } from './components/api/graphcms'
 import About from './components/About'
 import Footer from './components/Footer'
+import ArrowBtn from './components/style/ArrowBtn'
 
 // const loadData = async () => {
 // 	const response = await hygraph.request(PROJECTS);
@@ -29,7 +30,7 @@ const page = () => {
 	return (
 		<>
 			<Navigation />
-			<Container bg='bg-mx-100'>
+			<Container bg='bg-mx-100 min-h-[70vh] flex items-center'>
 				<div className="flex flex-col gap-4">
 					<div className="flex gap-1">
 						<h3 className='line-through'>Hello World </h3>
@@ -37,16 +38,15 @@ const page = () => {
 					</div>
 					<h1 className='text-6xl font-bold'>UX/UI Designer &</h1>
 					<h1 className='text-6xl font-bold'>Full-stack Engineer</h1>
-					<div className="flex items-center gap-2 before:content-[url(/elipse.svg)] before:-mr-8">
-						<h1 className='text-xl font-bold '>See my works</h1>
-						<Arrow />
+					<div className="mr-auto">
+						<ArrowBtn title='See my works' />
 					</div>
 				</div>
-				{/* <div className="absolute right-4 bottom-40">
+				<div className="absolute right-4 bottom-40">
 					<div className="after:content-[url(/down.svg)] after:absolute after:top-16 flex justify-center">
 						<p className='rotate-90'>Scroll Down</p>
 					</div>
-				</div> */}
+				</div>
 			</Container>
 			<Intro />
 			<ProjectList />
