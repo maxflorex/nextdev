@@ -7,7 +7,7 @@ import Line from './svg/Line';
 const About = () => {
     return (
         <Container>
-            <div className="grid grid-cols-10 gap-6 items-center my-24">
+            <div className="grid grid-cols-10 gap-6 items-center my-24" id='about'>
                 <span className="col-span-1 border-t-2 border-mx-500 h-2 -mt-5" /> 
                 <div className="col-span-3">
                     <h1>Who am I?</h1>
@@ -15,7 +15,7 @@ const About = () => {
                 </div>
 
                 <div className="col-span-5">
-                    <p className="text-justify indent-8">
+                    <p className="text-justify indent-4">
                         I am a web developer with an extensive background in
                         graphic arts. While finishing my studies as a designer,
                         I was introduced to UX/UI terms and I immediately feel

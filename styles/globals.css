@@ -6,6 +6,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
 
 h1 {
     font-size: 40px;
@@ -15,4 +18,13 @@ h1 {
 h2 {
     font-size: 32px;
     font-weight: bolder;
+}
+
+.link {
+    @apply hover:underline focus:underline underline-offset-8 cursor-pointer;
+}
+
+input,
+textarea {
+    @apply bg-mx-200 focus:bg-mx-100 p-2 rounded outline-none text-mx-500;
 }

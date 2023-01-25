@@ -5,7 +5,7 @@ import Social from './style/Social';
 const Intro = () => {
     return (
         <Container>
-            <div className="grid grid-cols-10 gap-6 items-center">
+            <div className="grid grid-cols-10 gap-6 items-center" id='works'>
                 <span className="col-span-1 border-t-2 border-mx-500 h-2" />
                 <div className="flex flex-col col-span-5">
                     <h1>Recent Projects</h1>

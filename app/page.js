@@ -10,14 +10,16 @@ import { hygraph, PROJECTS } from './components/api/graphcms'
 import About from './components/About'
 import Footer from './components/Footer'
 import ArrowBtn from './components/style/ArrowBtn'
+import ContactModal from './components/style/ContactModal'
 
-// const loadData = async () => {
-// 	const response = await hygraph.request(PROJECTS);
-// 	return response
-// }
+const loadData = async () => {
+	const response = await hygraph.request(PROJECTS);
+	return response
+}
 
 const page = () => {
 	const [projects, setProjects] = useState({})
+	const [showContact, setShowContact] = useState(false)
 
 	// useEffect(() => {
 	// 	loadData().then((res) => {
@@ -27,9 +29,19 @@ const page = () => {
 	// 	})
 	// }, [])
 
+
+	// * PREVENT SCROLL WHEN MODAL IS OPEN
+	useEffect(() => {
+		if (showContact) {
+			document.body.style.overflow = 'hidden'
+		} else {
+			document.body.style.overflow = 'visible'
+		}
+	}, [showContact])
+
 	return (
 		<>
-			<Navigation />
+			<Navigation show={setShowContact} />
 			<Container bg='bg-mx-100 min-h-[70vh] flex items-center'>
 				<div className="flex flex-col gap-4">
 					<div className="flex gap-1">
@@ -44,14 +56,15 @@ const page = () => {
 				</div>
 				<div className="absolute right-4 bottom-40">
 					<div className="after:content-[url(/down.svg)] after:absolute after:top-16 flex justify-center">
-						<p className='rotate-90'>Scroll Down</p>
+						<p className='rotate-90 text-mx-200'>Scroll Down</p>
 					</div>
 				</div>
 			</Container>
 			<Intro />
-			<ProjectList />
+			<ProjectList data={projects} />
 			<About />
-			<Footer />
+			{showContact && <ContactModal setShow={setShowContact} />}
+			<Footer setShow={setShowContact} />
 		</>
 	)
 }
