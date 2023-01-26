@@ -7,8 +7,11 @@ import Line from './svg/Line';
 const About = () => {
     return (
         <Container>
-            <div className="grid grid-cols-10 gap-6 items-center my-24" id='about'>
-                <span className="col-span-1 border-t-2 border-mx-500 h-2 -mt-5" /> 
+            <div
+                className="grid grid-cols-10 gap-6 items-center my-24"
+                id="about"
+            >
+                <span className="col-span-1 border-t-2 border-mx-500 h-2 -mt-5" />
                 <div className="col-span-3">
                     <h1>Who am I?</h1>
                     <BtnXL>My Journey</BtnXL>

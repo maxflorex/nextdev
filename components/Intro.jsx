@@ -4,15 +4,17 @@ import Social from './style/Social';
 
 const Intro = () => {
     return (
-        <Container>
-            <div className="grid grid-cols-10 gap-6 items-center" id='works'>
+        <Container className="bg-texture">
+            <div className="grid grid-cols-10 gap-6 items-center" id="works">
                 <span className="col-span-1 border-t-2 border-mx-500 h-2" />
                 <div className="flex flex-col col-span-5">
                     <h1>Recent Projects</h1>
-                    <p>Crafted with love</p>
+                    <p className="flex items-center gap-1">
+                        Crafted with <i className="ri-heart-3-line text-mx-300"></i>
+                    </p>
                 </div>
 
-                <div className="flex flex-col items-end gap-4 col-span-4">
+                <div className="flex flex-col items-end gap-2 col-span-4">
                     <Social
                         name="LinkedIn"
                         link="https://www.linkedin.com/in/maxfloresdev"

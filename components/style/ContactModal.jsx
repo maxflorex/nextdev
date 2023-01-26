@@ -57,7 +57,7 @@ const ContactModal = ({ setShow }) => {
                     className="absolute top-4 right-4 hover:scale-110 cursor-pointer"
                     onClick={exitModal}
                 >
-                    <i class="ri-close-fill p-2 bg-mx-300 rounded hover:bg-mx-400 close" />
+                    <i className="ri-close-fill p-2 bg-mx-300 rounded hover:bg-mx-400 close" />
                 </div>
             </div>
         </div>

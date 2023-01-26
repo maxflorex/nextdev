@@ -3,7 +3,6 @@ module.exports = {
 	content: [
 		"./pages/**/*.{js,ts,jsx,tsx}",
 		"./components/**/*.{js,ts,jsx,tsx}",
-		"./app/**/*.{js,ts,jsx,tsx}"
 	],
 	theme: {
 		extend: {
@@ -17,14 +16,17 @@ module.exports = {
 				},
 			},
 			backgroundImage: {
-				'subtle-pattern': "url('/white-waves.png')"
+				'subtle-pattern': "url('/white-waves.png')",
+				'texture': "url('https://www.transparenttextures.com/patterns/dark-stripes-light.png')",
+				'texture2': 'url("https://www.transparenttextures.com/patterns/green-fibers.png")',
+				'texture3': 'url("https://www.transparenttextures.com/patterns/grilled-noise.png")'
 			}
 		},
 		fontFamily: {
-			sans : ['var(--font-space)']
+			sans: ['var(--font-space)']
 		},
-	
+
 	},
-	
+
 	plugins: [],
 } 

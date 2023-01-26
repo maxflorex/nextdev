@@ -1,16 +1,15 @@
 "use client"
 
 import React, { Suspense, useEffect, useState } from 'react'
-import Arrow from './components/svg/Arrow'
-import Container from './components/style/Container'
-import Navigation from './components/Navigation'
-import Intro from './components/Intro'
-import ProjectList from './components/ProjectList'
-import { hygraph, PROJECTS } from './components/api/graphcms'
-import About from './components/About'
-import Footer from './components/Footer'
-import ArrowBtn from './components/style/ArrowBtn'
-import ContactModal from './components/style/ContactModal'
+import Container from '../components/style/Container'
+import Navigation from '../components/Navigation'
+import Intro from '../components/Intro'
+import ProjectList from '../components/ProjectList'
+import { hygraph, PROJECTS } from './api/graphcms'
+import About from '../components/About'
+import Footer from '../components/Footer'
+import ArrowBtn from '../components/style/ArrowBtn'
+import ContactModal from '../components/style/ContactModal'
 
 const loadData = async () => {
 	const response = await hygraph.request(PROJECTS);
@@ -42,7 +41,7 @@ const page = () => {
 	return (
 		<>
 			<Navigation show={setShowContact} />
-			<Container bg='bg-mx-100 min-h-[70vh] flex items-center'>
+			<Container bg='bg-texture min-h-[70vh] flex items-center relative'>
 				<div className="flex flex-col gap-4">
 					<div className="flex gap-1">
 						<h3 className='line-through'>Hello World </h3>

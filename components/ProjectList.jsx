@@ -13,10 +13,11 @@ const ProjectList = ({ data }) => {
     } absolute right-0 z-10 w-full transition-all duration-700 ease-in-out`;
 
     return (
-        <div className="bg-mx-100 hover:bg-white grid grid-cols-12 w-full items-center gap-8 relative overflow-hidden">
+        <div className="bg-texture bg-mx-100 hover:transition-all hover:duration-1000 duration-1000 hover:bg-white hover:bg-transparent grid grid-cols-12 w-full items-center gap-8 relative overflow-hidden border-2 border-mx-100 transition-all ">
             <span className="col-span-1 border-t-2 border-white" />
-            <Project setShowImg={setShowImg} />
+            <Project setShowImg={setShowImg} showImg={showImg} />
             <img src={url} alt="" className={imgStyle} />
+
         </div>
     );
 };

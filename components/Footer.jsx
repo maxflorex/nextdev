@@ -4,7 +4,7 @@ import Container from './style/Container';
 const Footer = ({ setShow }) => {
     return (
         <footer>
-            <Container bg="bg-mx-500">
+            <Container bg="bg-mx-500 bg-texture">
                 <div className="flex justify-between items-center text-mx-100">
                     <p>Have an exciting project where you need help?</p>
                     <h2

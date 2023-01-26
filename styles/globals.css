@@ -20,6 +20,14 @@ h2 {
     font-weight: bolder;
 }
 
+p {
+    @apply text-justify text-sm leading-6
+}
+
+button, .next-link {
+    @apply active:scale-95
+}
+
 .link {
     @apply hover:underline focus:underline underline-offset-8 cursor-pointer;
 }
