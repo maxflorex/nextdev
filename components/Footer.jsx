@@ -4,18 +4,18 @@ import Container from './style/Container';
 const Footer = ({ setShow }) => {
     return (
         <footer>
-            <Container bg="bg-mx-500">
-                <div className="flex justify-between items-center text-mx-100">
+            <Container bg="bg-mx-500 text-mx-100">
+                <div className="flex justify-between items-center">
                     <p>Have an exciting project where you need help?</p>
                     <h2
-                        className="text-mx-300 hover:text-mx-100 no-underline hover:underline decoration-wavy underline-offset-8 transition duration-700 cursor-pointer"
+                        className="text-mx-100 hover:text-mx-400 no-underline hover:underline decoration-wavy underline-offset-8 transition duration-700 cursor-pointer"
                         onClick={() => setShow(true)}
                     >
                         Get in touch!
                     </h2>
                 </div>
             </Container>
-            <div className="bg-mx-500 flex justify-center gap-4 p-4 text-mx-200 items-center">
+            <div className="bg-mx-500 flex justify-center gap-4 p-4 text-mx-200 items-center bg-texture4">
                 <div className="flex items-center gap-1">
                     <i className="ri-copyright-fill text-mx-300" />
                     <p className="text-xs">Copyright Max Flores</p>

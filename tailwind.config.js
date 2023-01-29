@@ -19,7 +19,8 @@ module.exports = {
 				'subtle-pattern': "url('/white-waves.png')",
 				'texture': "url('https://www.transparenttextures.com/patterns/dark-stripes-light.png')",
 				'texture2': 'url("https://www.transparenttextures.com/patterns/green-fibers.png")',
-				'texture3': 'url("https://www.transparenttextures.com/patterns/grilled-noise.png")'
+				'texture3': 'url("https://www.transparenttextures.com/patterns/grilled-noise.png")',
+				'texture4': 'url("https://www.transparenttextures.com/patterns/subtle-carbon.png")'
 			}
 		},
 		fontFamily: {

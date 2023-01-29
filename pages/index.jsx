@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Container from '../components/style/Container';
 import Navigation from '../components/Navigation';
 import Intro from '../components/Intro';
@@ -10,9 +10,10 @@ import About from '../components/About';
 import Footer from '../components/Footer';
 import ArrowBtn from '../components/style/ArrowBtn';
 import ContactModal from '../components/style/ContactModal';
+import MyProvider from '../components/context/Provider';
 
 export const getStaticProps = async () => {
-    const data = await hygraph.request(PROJECTS)
+    const data = await hygraph.request(PROJECTS);
 
     return {
         props: {
@@ -22,60 +23,35 @@ export const getStaticProps = async () => {
 };
 
 const page = ({ data }) => {
-    const [projects, setProjects] = useState({});
     const [showContact, setShowContact] = useState(false);
 
-	// const loadData = async () => {
-	// 	const response = await hygraph.request(PROJECTS);
-	// 	return response
-	// }
-
-    // useEffect(() => {
-    // 	loadData().then((res) => {
-    // 		setProjects(res)
-    // 	}).catch((err) => {
-    // 		console.log(err);
-    // 	})
-    // }, [])
-
-	console.log(data);
-
-    // * PREVENT SCROLL WHEN MODAL IS OPEN
-    useEffect(() => {
-        if (showContact) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'visible';
-        }
-    }, [showContact]);
-
     return (
-        <>
+        <MyProvider value={data}>
             <Navigation show={setShowContact} />
-            <Container bg="bg-texture min-h-[70vh] flex items-center relative group">
-                <div className="flex flex-col gap-4">
+            <Container bg="min-h-[90vh] flex items-center relative group bg-mx-500 box-border bg-texture4">
+                <div className="flex flex-col gap-4 text-mx-100">
                     <div className="flex gap-1">
                         <h3 className="line-through">Hello World </h3>
                         <h3>I'm Max Flores</h3>
                     </div>
-                    <h1 className="text-6xl font-bold">UX/UI Designer &</h1>
+                    <h1 className="text-6xl font-bold text-mx-300">
+                        UX/UI Designer &
+                    </h1>
                     <h1 className="text-6xl font-bold">Full-stack Engineer</h1>
                     <div className="mr-auto">
                         <ArrowBtn title="See my works" />
                     </div>
+                    <div className="absolute -bottom-6 left-0 w-full flex justify-center animate-bounce">
+                        <i className="ri-arrow-down-s-fill px-1 py-2 text-mx-500 bg-mx-300 rounded-full"></i>
+                    </div>
                 </div>
-                {/* <div className="absolute right-4 bottom-40">
-					<div className="after:content-[url(/down.svg)] after:absolute after:top-16 flex justify-center">
-						<p className='rotate-90 text-mx-200'>Scroll Down</p>
-					</div>
-				</div> */}
             </Container>
             <Intro />
-            <ProjectList data={projects} />
+            <ProjectList />
             <About />
             {showContact && <ContactModal setShow={setShowContact} />}
             <Footer setShow={setShowContact} />
-        </>
+        </MyProvider>
     );
 };
 

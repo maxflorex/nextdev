@@ -6,7 +6,7 @@ import Line from './svg/Line';
 
 const About = () => {
     return (
-        <Container>
+        <Container bg='bg-mx-400'>
             <div
                 className="grid grid-cols-10 gap-6 items-center my-24"
                 id="about"

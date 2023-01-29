@@ -1,15 +1,16 @@
 import React from 'react';
 
 const ContactModal = ({ setShow }) => {
-    // EXIT MODAL
+
     const exitModal = (e) => {
         if (e.target.classList.contains('close')) {
             setShow(false);
+            document.body.style.overflow = 'visible'
         }
     };
 
     return (
-        <div className="h-screen w-screen fixed top-0 z-30 overflow-hidden box-content m-auto flex items-center justify-center">
+        <div className="h-screen w-screen fixed top-0 z-30 overflow-hidden box-content m-auto flex items-center justify-center bg-white/10 backdrop-blur-sm">
             <div className="flex flex-col justify-center items-center bg-mx-500 w-5/6 h-5/6 relative rounded">
                 {/* FORM */}
                 <form

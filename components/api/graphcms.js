@@ -31,6 +31,16 @@ export const PROJECTS = gql`
       url
     }
     slug
+    technologies {
+      ... on Technology {
+        id
+        title
+        logo {
+          id
+          url
+        }
+      }
+    }
   }
 }
 `

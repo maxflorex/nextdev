@@ -36,3 +36,7 @@ input,
 textarea {
     @apply bg-mx-200 focus:bg-mx-100 p-2 rounded outline-none text-mx-500;
 }
+
+.btn {
+    @apply bg-mx-500 px-4 py-2 rounded-full my-32 text-mx-100 active:scale-95 hover:bg-mx-300 hover:text-mx-500 bg-texture2
+}
