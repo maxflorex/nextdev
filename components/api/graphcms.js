@@ -1,8 +1,7 @@
 import { GraphQLClient, gql } from 'graphql-request';
 
 export const hygraph = new GraphQLClient(
-  process.env.NEXT_PUBLIC_CLIENT
-  ,
+  process.env.NEXT_PUBLIC_CLIENT,
   {
     headers: {
       Authorization:

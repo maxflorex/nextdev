@@ -6,16 +6,17 @@ import Footer from '../../../components/Footer';
 import Logo from '../../../components/svg/Logo';
 
 const page = () => {
-    const [showContact, setShowContact] = useState(false);
 
     return (
         <div className="flex flex-col min-h-screen justify-between box-border">
             <nav className="col-start-2 col-span-10 flex justify-center py-4 items-center z-10">
-                <Logo />
+                <Link href="/">
+                    <Logo />
+                </Link>
             </nav>
 
             <main className="h-full mb-auto">
-                <article className="bg-mx-300 h-64">
+                <article className="bg-mx-300 h-80">
                     <section className="flex justify-between py-8 items-end h-full container mx-auto">
                         <h1>Project name</h1>
                         <Link
@@ -27,7 +28,7 @@ const page = () => {
                         </Link>
                     </section>
 
-                    <section className="flex gap-2 container mx-auto my-4">
+                    <section className="flex gap-2 container mx-auto mt-8 mb-4">
                         <span className="px-4 py-1 rounded-full bg-mx-500 text-mx-100 flex items-center bg-texture2">
                             <h4>Role</h4>
                         </span>
@@ -40,7 +41,7 @@ const page = () => {
                         </ul>
                     </section>
 
-                    <section className="grid grid-cols-10 gap-12 container mx-auto my-16">
+                    <section className="grid grid-cols-10 gap-12 container mx-auto my-12">
                         <div className="col-span-5">
                             <p>
                                 Lorem ipsum dolor sit amet consectetur
@@ -64,14 +65,48 @@ const page = () => {
                         <div className="container mx-auto grid grid-cols-10 items-center gap-6">
                             <span className="col-span-1 border-t-2 border-mx-500 h-2" />
                             <div className="col-span-4">
-                                <h3>Next project</h3>
+                                <h3 className="text-2xl">Next project</h3>
                             </div>
 
-                            <div className="col-span-5 bg-mx-300">
-                                <h2>Hey</h2>
+                            <div className="col-span-5 w-full">
+                                <div className="flex gap-2 justify-end items-center">
+                                    <button className="bg-mx-300 rounded-full py-1 px-4 hover:bg-mx-500 active:scale-95 hover:text-white">
+                                        Prev
+                                    </button>
+                                    <button className="bg-mx-300 rounded-full py-1 px-4 hover:bg-mx-500 active:scale-95 hover:text-white">
+                                        Next
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </section>
+
+                    <footer className="bg-mx-500 bg-texture flex justify-center py-4 text-white">
+                        <div className="flex items-center gap-1">
+                            <i className="ri-copyright-fill text-mx-300" />
+                            <p className="text-xs pr-4">Copyright Max Flores</p>
+                        </div>
+                        <div className="flex gap-1 border-l border-mx-100 pl-4">
+                            <a
+                                href="https://www.linkedin.com/in/maxfloresdev"
+                                target="_blank"
+                            >
+                                <i className="ri-linkedin-line hover:text-mx-300" />
+                            </a>
+                            <a
+                                href="https://www.github.com/maxflorex"
+                                target="_blank"
+                            >
+                                <i className="ri-github-line hover:text-mx-300" />
+                            </a>
+                            <a
+                                href="https://twitter.com/max01011001"
+                                target="_blank"
+                            >
+                                <i className="ri-twitter-line hover:text-mx-300" />
+                            </a>
+                        </div>
+                    </footer>
                 </article>
             </main>
             {/* <Footer setShow={setShowContact} /> */}
