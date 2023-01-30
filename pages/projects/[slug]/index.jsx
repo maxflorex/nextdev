@@ -1,11 +1,46 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import Footer from '../../../components/Footer';
 import Logo from '../../../components/svg/Logo';
+import { hygraph, PROJECT, PROJECTS } from '../../api/graphcms';
 
-const page = () => {
+export const getStaticPaths = async () => {
+    const { projects } = await hygraph.request(PROJECTS);
+
+    const paths = projects.map((item) => {
+        return {
+            params: {
+                slug: item.slug.toString(),
+            },
+        };
+    });
+
+    return {
+        paths,
+        fallback: false,
+    };
+};
+
+export const getStaticProps = async (context) => {
+    const slug = context.params.slug;
+
+    const variables = {
+        slug,
+    };
+
+    const { project } = await hygraph.request(PROJECT, variables);
+
+    return {
+        props: {
+            project,
+        },
+    };
+};
+
+const page = ({ project }) => {
+    console.log(project);
 
     return (
         <div className="flex flex-col min-h-screen justify-between box-border">

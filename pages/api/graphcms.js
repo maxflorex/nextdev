@@ -44,3 +44,37 @@ export const PROJECTS = gql`
   }
 }
 `
+
+export const PROJECT = gql`
+  query GetProject($slug: String!) {
+  project(where: {slug: $slug}) {
+    id
+    title
+    github
+    url
+    screenMockups {
+      url
+    }
+    banner {
+      url
+    }
+    webMockups {
+      url
+    }
+    mobileMockups {
+      url
+    }
+    slug
+    technologies {
+      ... on Technology {
+        id
+        title
+        logo {
+          id
+          url
+        }
+      }
+    }
+  }
+}
+`

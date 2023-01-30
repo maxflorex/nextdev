@@ -1,5 +1,5 @@
-import Container from './style/Container';
-import Social from './style/Social';
+import Container from './styled/Container';
+import Social from './styled/Social';
 
 const Intro = () => {
     return (

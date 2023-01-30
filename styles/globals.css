@@ -29,7 +29,7 @@ button, .next-link {
 }
 
 .link {
-    @apply hover:underline focus:underline underline-offset-8 cursor-pointer;
+    @apply hover:underline focus:underline underline-offset-8 cursor-pointer text-sm;
 }
 
 input,

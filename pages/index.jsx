@@ -1,18 +1,18 @@
 'use client';
 
 import React, { useContext, useEffect, useState } from 'react';
-import Container from '../components/style/Container';
+import Container from '../components/styled/Container';
 import Navigation from '../components/Navigation';
 import Intro from '../components/Intro';
 import ProjectList from '../components/ProjectList';
-import { hygraph, PROJECTS } from '../components/api/graphcms';
+import { hygraph, PROJECTS } from './api/graphcms';
 import About from '../components/About';
 import Footer from '../components/Footer';
-import ArrowBtn from '../components/style/ArrowBtn';
-import ContactModal from '../components/style/ContactModal';
+import ArrowBtn from '../components/styled/ArrowBtn';
+import ContactModal from '../components/styled/ContactModal';
 import MyProvider from '../components/context/Provider';
 
-export const getStaticProps = async () => {
+export const getStaticPaths= async () => {
     const data = await hygraph.request(PROJECTS);
 
     return {
@@ -37,7 +37,7 @@ const page = ({ data }) => {
                     <h1 className="text-6xl font-bold text-mx-300">
                         UX/UI Designer &
                     </h1>
-                    <h1 className="text-6xl font-bold">Full-stack Engineer</h1>
+                    <h1 className="text-6xl font-bold">Frontend Engineer</h1>
                     <div className="mr-auto">
                         <ArrowBtn title="See my works" />
                     </div>

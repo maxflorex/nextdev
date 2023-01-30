@@ -1,19 +1,19 @@
 import React from 'react';
-import BtnXL from './style/BtnXL';
-import Container from './style/Container';
+import BtnXL from './styled/BtnXL';
+import Container from './styled/Container';
 import Arrow from './svg/Arrow';
 import Line from './svg/Line';
 
 const About = () => {
     return (
-        <Container bg='bg-mx-400'>
+        <Container bg='bg-mx-300 bg-texture'>
             <div
-                className="grid grid-cols-10 gap-6 items-center my-24"
+                className="grid grid-cols-10 gap-6 items-center my-8"
                 id="about"
             >
-                <span className="col-span-1 border-t-2 border-mx-500 h-2 -mt-5" />
+                <span className="col-span-1 border-t-2 border-mx-500 h-2 -mt-10" />
                 <div className="col-span-3">
-                    <h1>Who am I?</h1>
+                    <h1 className='mb-2'>Who am I?</h1>
                     <BtnXL>My Journey</BtnXL>
                 </div>
 

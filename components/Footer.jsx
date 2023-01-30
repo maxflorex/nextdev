@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from './style/Container';
+import Container from './styled/Container';
 
 const Footer = ({ setShow }) => {
     return (
