@@ -25,8 +25,8 @@ const page = ({ projects }) => {
             </nav>
 
             <main className="h-full mb-auto">
-                <section className="bg-mx-500 relative bg-texture4">
-                    <div className="flex-jb py-8 h-[40vh] relative container mx-auto">
+                <section className="bg-mx-500 relative bg-texture4 h-[40vh] flex items-center">
+                    <div className="flex justify-between items-center py-8 relative container mx-auto">
                         <div className="flex flex-col gap-2">
                             <h1 className="text-mx-300 drop-shadow-sm">
                                 - My Work

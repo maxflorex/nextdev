@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import Footer2 from '../../../components/Footer2';
+import ImageModal from '../../../components/ImageModal';
 import Logo from '../../../components/svg/Logo';
 import { hygraph, PROJECT, PROJECTS } from '../../api/graphcms';
 
@@ -41,6 +42,9 @@ export const getStaticProps = async (context) => {
 };
 
 const page = ({ project }) => {
+    const [expandImage, setExpandImage] = useState(false);
+    const screenshots = project.webMockups.concat(project.mobileMockups);
+
     return (
         <div className="flex flex-col min-h-screen justify-between box-border">
             <nav className="col-start-2 col-span-10 flex justify-center py-4 items-center z-10">
@@ -130,24 +134,20 @@ const page = ({ project }) => {
                         </div>
                     </div>
                     <div className="xl:col-span-7 col-span-5 flex flex-col gap-8">
-                        {project.webMockups.map((image, i) => (
-                            <div className="w-full h-72 relative">
-                                <Image
-                                    src={image.url}
-                                    fill
-                                    className="object-contain"
-                                />
-                            </div>
-                        ))}
-                        {project.mobileMockups.map((image, i) => (
-                            <div className="w-full h-72 relative">
-                                <Image
-                                    src={image.url}
-                                    fill
-                                    className="object-contain"
-                                />
-                            </div>
-                        ))}
+                        {screenshots &&
+                            screenshots.map((image, i) => (
+                                <div className="w-full h-72 relative" key={i}>
+                                    <Image
+                                        src={image.url}
+                                        alt='Project mockups'
+                                        fill
+                                        className="object-contain"
+                                        sizes="(max-width: 768px) 100vw,
+                                        (max-width: 1200px) 50vw,
+                                        33vw"
+                                    />
+                                </div>
+                            ))}
                     </div>
                 </section>
 
@@ -175,6 +175,8 @@ const page = ({ project }) => {
 
                 <Footer2 />
             </main>
+
+            {expandImage && <ImageModal />}
         </div>
     );
 };

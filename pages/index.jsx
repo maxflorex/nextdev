@@ -11,8 +11,9 @@ import Footer from '../components/Footer';
 import ArrowBtn from '../components/styled/ArrowBtn';
 import ContactModal from '../components/styled/ContactModal';
 import MyProvider from '../components/context/Provider';
+import Link from 'next/link';
 
-export const getStaticProps= async () => {
+export const getStaticProps = async () => {
     const data = await hygraph.request(PROJECTS);
 
     return {
@@ -22,7 +23,7 @@ export const getStaticProps= async () => {
     };
 };
 
-const page = ({ data }) => {    
+const page = ({ data }) => {
     const [showContact, setShowContact] = useState(false);
 
     return (
@@ -39,7 +40,9 @@ const page = ({ data }) => {
                     </h1>
                     <h1 className="text-6xl font-bold">Frontend Engineer</h1>
                     <div className="mr-auto">
+                        {/* <Link href="/projects"> */}
                         <ArrowBtn title="See my works" />
+                        {/* </Link> */}
                     </div>
                     <div className="absolute -bottom-6 left-0 w-full flex justify-center animate-bounce">
                         <i className="ri-arrow-down-s-fill px-1 py-2 text-mx-500 bg-mx-300 rounded-full"></i>
