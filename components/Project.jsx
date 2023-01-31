@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import ArrowBtn from './styled/ArrowBtn2';
 
 const Project = ({ project, i }) => {
@@ -7,8 +8,10 @@ const Project = ({ project, i }) => {
                 <div className="flex gap-4 items-center">
                     <p className="text-mx-300">{i + 1}</p>
                     <div className="flex items-center relative">
-                        <h2 className="z-10">{project.title}</h2>
-                        <p className="text-mx-100 text-8xl font-bold absolute -right-10 bg-clip-text bg-texture group-hover:text-transparent">
+                        <Link href={`/projects/${project.slug}`}>
+                            <h2 className="z-10 hover:text-mx-400">{project.title}</h2>
+                        </Link>
+                        <p className="text-mx-100 text-8xl font-bold absolute -right-10 bg-clip-text bg-texture group-hover:text-transparent -z-20">
                             0{i + 1}
                         </p>
                     </div>

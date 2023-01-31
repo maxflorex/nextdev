@@ -21,11 +21,12 @@ h2 {
 }
 
 p {
-    @apply text-justify text-sm leading-6
+    @apply text-justify text-sm leading-6;
 }
 
-button, .next-link {
-    @apply active:scale-95
+button,
+.next-link {
+    @apply active:scale-95;
 }
 
 .link {
@@ -38,5 +39,9 @@ textarea {
 }
 
 .btn {
-    @apply bg-mx-500 px-4 py-2 rounded-full my-32 text-mx-100 active:scale-95 hover:bg-mx-300 hover:text-mx-500 bg-texture2
+    @apply bg-mx-500 px-4 py-2 rounded-full my-32 text-mx-100 active:scale-95 hover:bg-mx-300 hover:text-mx-500 bg-texture2;
+}
+
+.flex-jb {
+    @apply flex justify-between items-end;
 }

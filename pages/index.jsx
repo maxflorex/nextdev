@@ -12,7 +12,7 @@ import ArrowBtn from '../components/styled/ArrowBtn';
 import ContactModal from '../components/styled/ContactModal';
 import MyProvider from '../components/context/Provider';
 
-export const getStaticPaths= async () => {
+export const getStaticProps= async () => {
     const data = await hygraph.request(PROJECTS);
 
     return {
@@ -22,7 +22,7 @@ export const getStaticPaths= async () => {
     };
 };
 
-const page = ({ data }) => {
+const page = ({ data }) => {    
     const [showContact, setShowContact] = useState(false);
 
     return (

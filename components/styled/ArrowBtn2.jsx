@@ -10,7 +10,7 @@ const ArrowBtn = ({ title, id }) => {
         >
             <h1 className="text-xl font-bold text-mx-500 z-40">{title}</h1>
             <i className="ri-arrow-right-line text-mx-500 z-40"></i>
-            <span className="bg-mx-300 h-full w-11 z-20 absolute left-0 rounded-full group-hover:w-full file:delay-200 -mr-2 border-transparent border-2 group-hover/btn2:border-mx-500" />
+            <span className="bg-mx-300 h-full w-11 z-20 absolute left-0 rounded-full group-hover:w-full file:delay-200 -mr-2  group-hover/btn2:bg-mx-400" />
         </Link>
     );
 };

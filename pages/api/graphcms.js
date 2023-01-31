@@ -13,11 +13,12 @@ export const hygraph = new GraphQLClient(
 
 export const PROJECTS = gql`
 {
-  projects {
+  projects(orderBy: createdAt_DESC) {
     id
     title
     github
     url
+    description
     screenMockups {
       url
     }
@@ -52,6 +53,7 @@ export const PROJECT = gql`
     title
     github
     url
+    description
     screenMockups {
       url
     }
