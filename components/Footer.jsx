@@ -5,7 +5,7 @@ const Footer = ({ setShow }) => {
     return (
         <footer>
             <Container bg="bg-mx-500 text-mx-100">
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center flex-wrap">
                     <p>Have an exciting project where you need help?</p>
                     <h2
                         className="text-mx-100 hover:text-mx-400 no-underline hover:underline decoration-wavy underline-offset-8 transition duration-700 cursor-pointer"

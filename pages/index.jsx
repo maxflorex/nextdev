@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Container from '../components/styled/Container';
 import Navigation from '../components/Navigation';
 import Intro from '../components/Intro';
@@ -11,7 +11,6 @@ import Footer from '../components/Footer';
 import ArrowBtn from '../components/styled/ArrowBtn';
 import ContactModal from '../components/styled/ContactModal';
 import MyProvider from '../components/context/Provider';
-import Link from 'next/link';
 
 export const getStaticProps = async () => {
     const data = await hygraph.request(PROJECTS);
@@ -35,10 +34,10 @@ const page = ({ data }) => {
                         <h3 className="line-through">Hello World </h3>
                         <h3>I'm Max Flores</h3>
                     </div>
-                    <h1 className="text-6xl font-bold text-mx-300">
+                    <h1 className="lg:text-6xl text-4xl font-bold text-mx-300">
                         UX/UI Designer &
                     </h1>
-                    <h1 className="text-6xl font-bold">Frontend Engineer</h1>
+                    <h1 className="lg:text-6xl text-4xl font-bold">Frontend Engineer</h1>
                     <div className="mr-auto">
                         {/* <Link href="/projects"> */}
                         <ArrowBtn title="See my works" />

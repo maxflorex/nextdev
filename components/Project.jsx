@@ -4,7 +4,7 @@ import ArrowBtn from './styled/ArrowBtn2';
 const Project = ({ project, i }) => {
     return (
         <div className="col-start-2 col-span-10 py-48 z-20">
-            <div className="flex gap-4 items-center justify-between w-full">
+            <div className="flex lg:flex-row flex-col gap-4 items-center justify-between w-full">
                 <div className="flex gap-4 items-center">
                     <p className="text-mx-300">{i + 1}</p>
                     <div className="flex items-center relative">

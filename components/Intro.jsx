@@ -5,15 +5,15 @@ const Intro = () => {
     return (
         <Container bg='bg-texture'>
             <div className="grid grid-cols-10 gap-6 items-center" id="works">
-                <span className="col-span-1 border-t-2 border-mx-500 h-2 -mt-16" />
-                <div className="flex flex-col col-span-5">
+                <span className="col-span-1 border-t-2 border-mx-500 h-2 -mt-16 lg:block hidden" />
+                <div className="flex flex-col lg:col-span-5 col-span-10">
                     <h1>Recent Projects</h1>
-                    <p className="flex items-center gap-1 w-2/3">
+                    <p className="flex items-center gap-1 lg:w-2/3 w-full">
                     The past few years have presented me with incredible opportunities to explore and grow through various projects. I'm eager to share some of my most cherished projects with you today.
                     </p>
                 </div>
 
-                <div className="flex flex-col items-end gap-2 col-span-4">
+                <div className="flex lg:flex-col items-end gap-2 lg:col-span-4 col-span-10 justify-center">
                     <Social
                         name="LinkedIn"
                         link="https://www.linkedin.com/in/maxfloresdev"
