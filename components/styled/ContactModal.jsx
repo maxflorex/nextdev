@@ -1,11 +1,38 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const ContactModal = ({ setShow }) => {
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs
+            .sendForm(
+                process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID,
+                process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID,
+                form.current,
+                process.env.NEXT_PUBLIC_EMAIL_KEY
+            )
+            .then(
+                (result) => {
+                    console.log(result.text);
+                    alert(
+                        "Your message has been sent! I'll get back to you as soon as possible :)"
+                    );
+                    setShow(false);
+                    document.body.style.overflow = 'visible';
+                },
+                (error) => {
+                    console.log(error.text);
+                }
+            );
+    };
 
     const exitModal = (e) => {
         if (e.target.classList.contains('close')) {
             setShow(false);
-            document.body.style.overflow = 'visible'
+            document.body.style.overflow = 'visible';
         }
     };
 
@@ -14,16 +41,31 @@ const ContactModal = ({ setShow }) => {
             <div className="flex flex-col justify-center items-center bg-mx-500 w-5/6 h-5/6 relative rounded">
                 {/* FORM */}
                 <form
+                    ref={form}
+                    onSubmit={sendEmail}
                     action=""
                     className="text-white flex w-auto justify-center flex-col gap-4"
                 >
                     <h1>Get in touch!</h1>
-                    <input type="text" placeholder="Enter Email..." />
+                    <input
+                        type="text"
+                        placeholder="Enter Your Name..."
+                        name="user_name"
+                    />
+                    <input
+                        type="email"
+                        placeholder="Enter Your Email..."
+                        name="user_email"
+                    />
                     <textarea
                         placeholder="Send me a message..."
                         className="h-32"
+                        name="message"
                     />
-                    <button className="px-4 py-2 bg-mx-300 rounded">
+                    <button
+                        type="submit"
+                        className="px-4 py-2 bg-mx-300 rounded"
+                    >
                         Send
                     </button>
                 </form>

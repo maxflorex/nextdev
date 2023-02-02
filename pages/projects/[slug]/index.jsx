@@ -46,20 +46,20 @@ export const getStaticProps = async (context) => {
 };
 
 const page = ({ project, projects }) => {
-    // const nextProject = projects.filter((element) => {
-    //     if (element.slug === project.slug) {
-    //         return true;
-    //     }
-
-    //     return false;
-    // });
-
-    // console.log(nextProject);
-
     const [expandImage, setExpandImage] = useState(false);
     const [index, setIndex] = useState(0);
-    const router = useRouter();
+    const currentIndex = projects.findIndex((obj) => obj.slug == project.slug);
     const screenshots = project.webMockups.concat(project.mobileMockups);
+    const router = useRouter();
+
+    const nextProject = (e) => {
+        e.preventDefault();
+        if (currentIndex + 1 === projects.length) {
+            router.push(`/projects/${projects[0].slug}`);
+        } else {
+            router.push(`/projects/${projects[currentIndex + 1].slug}`);
+        }
+    };
 
     const handleModal = (i) => {
         setExpandImage(true);
@@ -69,7 +69,7 @@ const page = ({ project, projects }) => {
 
     return (
         <div className="flex flex-col min-h-screen justify-between box-border">
-            <nav className="col-start-2 col-span-10 flex justify-center py-4 items-center z-10">
+            <nav className="col-start-2 col-span-10 flex justify-center py-4 items-center">
                 <Link href="/">
                     <Logo />
                 </Link>
@@ -96,7 +96,7 @@ const page = ({ project, projects }) => {
                     </Container>
                 </section>
 
-                <Container py='lg:py-0'>
+                <Container py="lg:py-0">
                     <section className="flex flex-wrap lg:justify-start justify-center gap-2 my-8">
                         <span className="px-4 py-1 rounded-full bg-mx-500 text-mx-100 flex items-center bg-texture2 lg:text-sm text-xs">
                             <h4>Role</h4>
@@ -191,30 +191,33 @@ const page = ({ project, projects }) => {
                     </div>
                 </section>
 
-                <section className="grid grid-cols-12 bg-texture lg:py-32 py-16">
-                    <div className="col-start-2 col-span-10">
-                        {/* <span className="col-span-1 border-t-2 border-mx-500 h-2 lg:block hidden" /> */}
-                        <div className="lg:col-span-4 col-span-10">
-                            <h3 className="text-2xl font-black lg:pb-0 pb-2">
-                                Next project
-                            </h3>
-                        </div>
-
-                        <div className="lg:col-span-5 col-span-10 w-full">
-                            <div className="flex gap-2 lg:justify-end justify-start items-center">
-                                <button
-                                    onClick={() => router.back()}
-                                    className="bg-mx-300 rounded-full py-1 px-4 hover:bg-mx-500 active:scale-95 hover:text-white"
-                                >
-                                    Prev
-                                </button>
-                                <button className="bg-mx-300 rounded-full py-1 px-4 hover:bg-mx-500 active:scale-95 hover:text-white">
-                                    Next
-                                </button>
-                            </div>
-                        </div>
+                <Container bg2="grid grid-cols-2" bg="bg-mx-100">
+                    <div className="flex gap-4 items-center">
+                        <span className="border-t-2 border-mx-500 h-2 w-1/5" />
+                        <h3 className="text-2xl font-black lg:pb-0 pb-2">
+                            Next project
+                        </h3>
                     </div>
-                </section>
+
+                    <div className="flex gap-2 lg:justify-end justify-start items-center">
+                        <button
+                            onClick={() => router.back()}
+                            className="bg-mx-300 rounded-full py-1 px-4 hover:bg-mx-500 active:scale-95 hover:text-white flex items-center gap-1"
+                        >
+                            <i className="ri-arrow-left-s-fill"></i>
+                            Back
+                        </button>
+                        <button
+                            className="bg-mx-300 rounded-full py-1 px-4 hover:bg-mx-500 active:scale-95 hover:text-white flex items-center gap-1"
+                            onClick={nextProject}
+                        >
+                            {currentIndex + 1 === projects.length
+                                ? `${projects[0].title}`
+                                : `${projects[currentIndex + 1].title}`}
+                            <i className="ri-arrow-right-s-fill"></i>
+                        </button>
+                    </div>
+                </Container>
 
                 <Footer2 />
             </main>
