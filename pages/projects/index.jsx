@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useMemo } from 'react';
 import Footer2 from '../../components/Footer2';
 import Project from '../../components/Project';
 import Logo from '../../components/svg/Logo';
+import Container from '../../components/styled/Container';
 import { hygraph, PROJECTS } from '../api/graphcms';
 
 export const getStaticProps = async () => {
@@ -16,6 +17,8 @@ export const getStaticProps = async () => {
 };
 
 const page = ({ projects }) => {
+    const random = useMemo(() => Math.floor(Math.random() * 6), []);
+
     return (
         <div className="flex flex-col min-h-screen justify-between box-border">
             <nav className="col-start-2 col-span-10 flex justify-center py-4 items-center z-10">
@@ -25,14 +28,19 @@ const page = ({ projects }) => {
             </nav>
 
             <main className="h-full mb-auto">
-                <section className="bg-gradient-to-r from-mx-300 to-mx-400">
-                    <div className="bg-texture relative h-[35vh] flex items-end">
-                        <div className="flex lg:flex-row flex-col xl:justify-between justify-center lg:items-end items-center p-8 relative container mx-auto">
-                            <div className="flex flex-col gap-2">
-                                <h1 className="text-mx-500 drop-shadow-sm">
-                                    My Work
+                <div
+                    className="bg-center bg-cover bg-fixed"
+                    style={{
+                        backgroundImage: `url(${projects.projects[random]?.banner.url})`,
+                    }}
+                >
+                    <Container bg="bg-black/80 bg-texture4 backdrop-blur-sm" py="lg:py-32 py-16">
+                        <div className="flex lg:flex-row flex-col items-center justify-between gap-2">
+                            <div className="flex flex-col">
+                                <h1 className="text-mx-300 drop-shadow-sm">
+                                    - My Work -
                                 </h1>
-                                <p className="lg:w-2/3 w-full self-start text-mx-500">
+                                <p className="lg:w-2/3 w-full self-start text-mx-100">
                                     I have been lucky enough to work on a
                                     variety of different projects over the past
                                     few years.{' '}
@@ -44,14 +52,14 @@ const page = ({ projects }) => {
                             </div>
                             <Link
                                 href="/"
-                                className="flex items-center gap-2 py-1 px-4 bg-white rounded-full next-link"
+                                className="flex items-center gap-2 py-1 px-4 bg-white hover:bg-mx-300 rounded-full next-link lg:mr-0 mr-auto"
                             >
                                 <i className="ri-home-line"></i>
                                 <p>Home</p>
                             </Link>
                         </div>
-                    </div>
-                </section>
+                    </Container>
+                </div>
 
                 {projects?.projects.map((project, i) => {
                     return (

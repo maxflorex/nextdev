@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@next/font": "^13.1.1",
+    "@splinetool/react-spline": "^2.2.5",
+    "@splinetool/runtime": "^0.9.207",
     "graphql": "^16.6.0",
     "graphql-request": "^5.0.0",
     "next": "^13.0.0",

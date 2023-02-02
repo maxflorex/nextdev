@@ -11,9 +11,10 @@ const Intro = () => {
                     <p className="flex items-center gap-1 lg:w-2/3 w-full">
                     The past few years have presented me with incredible opportunities to explore and grow through various projects. I'm eager to share some of my most cherished projects with you today.
                     </p>
+                    <h1 className='lg:hidden block text-mx-400'><i className="ri-arrow-down-s-line animate-pulse"></i></h1>
                 </div>
 
-                <div className="flex lg:flex-col items-end gap-2 lg:col-span-4 col-span-10 justify-center">
+                <div className="lg:flex-col items-end gap-2 lg:col-span-4 col-span-10 justify-cente lg:flex hidden">
                     <Social
                         name="LinkedIn"
                         link="https://www.linkedin.com/in/maxfloresdev"

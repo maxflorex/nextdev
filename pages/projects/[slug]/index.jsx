@@ -87,7 +87,7 @@ const page = ({ project, projects }) => {
                             </h2>
                             <button
                                 onClick={() => router.back()}
-                                className="flex items-center gap-2 py-1 px-4 bg-white rounded-full next-link"
+                                className="flex items-center gap-2 py-1 px-4 bg-white hover:bg-mx-300 rounded-full next-link"
                             >
                                 <i className="ri-arrow-left-line"></i>
                                 <p>Go Back</p>
@@ -96,7 +96,7 @@ const page = ({ project, projects }) => {
                     </Container>
                 </section>
 
-                <Container bg="py-0 lg:py-0">
+                <Container py='lg:py-0'>
                     <section className="flex flex-wrap lg:justify-start justify-center gap-2 my-8">
                         <span className="px-4 py-1 rounded-full bg-mx-500 text-mx-100 flex items-center bg-texture2 lg:text-sm text-xs">
                             <h4>Role</h4>
