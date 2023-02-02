@@ -29,8 +29,10 @@ const page = ({ data }) => {
     return (
         <MyProvider value={data}>
             <Navigation show={setShowContact} />
-            <Container bg="min-h-[90vh] flex items-center relative group bg-mx-500 box-border">
-                <div className="flex justify-between gap-4">
+            <Spline />
+
+            <Container bg="min-h-[90vh] flex items-center relative group bg-mx-500 box-border hidden">
+                <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
                     <div className="flex flex-col gap-4 text-mx-100">
                         <div className="flex gap-1">
                             <h3 className="line-through">Hello World </h3>
@@ -51,11 +53,9 @@ const page = ({ data }) => {
                             <i className="ri-arrow-down-s-fill px-1 py-2 text-mx-500 bg-mx-300 rounded-full"></i>
                         </div>
                     </div>
-                    <div className="w-1/2">
-                        <Spline />
-                    </div>
                 </div>
             </Container>
+
             <Intro />
             <ProjectList />
             <About />
