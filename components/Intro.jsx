@@ -3,7 +3,7 @@ import Social from './styled/Social';
 
 const Intro = () => {
     return (
-        <div className="bg-texture">
+        <div className="bg-texture hidden lg:block">
             <Container bg="bg-gradient-to-b from-white/0 to-mx-100">
                 <div
                     className="grid grid-cols-10 gap-6 items-center"

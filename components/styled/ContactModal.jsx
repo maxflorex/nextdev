@@ -38,24 +38,19 @@ const ContactModal = ({ setShow }) => {
     };
 
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{opacity: 1}}
-            transition={{duration: 0.5}}
-            className="h-screen w-screen fixed top-0 z-30 overflow-hidden box-content m-auto flex items-center justify-center bg-white/10 backdrop-blur-sm"
+        <div
+            className="h-screen w-screen fixed top-0 z-[999] overflow-hidden box-content m-auto flex items-center justify-center bg-white/10 backdrop-blur-sm"
+            F
         >
             <div className="flex flex-col justify-center items-center bg-mx-500 w-5/6 h-5/6 relative rounded">
                 {/* FORM */}
-                <motion.form
-                    initial={{ translateY: 100, opacity: 0 }}
-                    animate={{ translateY: 0, opacity: 1 }}
-                    transition={{ duration: 1, ease: 'linear', delay: 0.5, power: 0.2 }}
+                <form
                     ref={form}
                     onSubmit={sendEmail}
                     action=""
-                    className="text-white flex w-auto justify-center flex-col gap-4"
+                    className="text-white flex lg:w-auto w-full lg:px-4 px-6 justify-center flex-col gap-4"
                 >
-                    <h1>Get in touch!</h1>
+                    <h1 className='text-center'>Get in touch!</h1>
                     <input
                         type="text"
                         placeholder="Enter Your Name..."
@@ -77,7 +72,7 @@ const ContactModal = ({ setShow }) => {
                     >
                         Send
                     </button>
-                </motion.form>
+                </form>
 
                 {/* SOCIAL MEDIA */}
                 <div className="mt-16 text-mx-100 flex flex-col items-center">
@@ -112,7 +107,7 @@ const ContactModal = ({ setShow }) => {
                     <i className="ri-close-fill p-2 bg-mx-300 rounded hover:bg-mx-400 close" />
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 };
 

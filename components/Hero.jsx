@@ -8,7 +8,7 @@ const Hero = () => {
             <span className="w-full h-full backdrop-blur-sm absolute top-0 left-0 z-10"></span>
             <span className="w-full h-full bg-texture4 absolute top-0 left-0 z-20"></span>
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-                <div className="flex flex-col gap-4 text-mx-100 z-20">
+                <div className="flex flex-col lg:gap-4 gap-2 text-mx-100 z-20">
                     <h1 className="text-xl">
                         <span className="font-thin">Hello world!</span> I'm Max:
                     </h1>
@@ -20,7 +20,7 @@ const Hero = () => {
                         & UI/UX Designer
                     </h1>
 
-                    <div className="mr-auto">
+                    <div className="mt-4 lg:mt-0 mr-auto">
                         <ArrowBtn title="See my works" direction="/projects" />
                     </div>
 

@@ -9,7 +9,7 @@ const About = () => {
     const [showMore, setShowMore] = useState(false);
 
     return (
-        <>
+        <div>
             <Container bg="bg-mx-300 bg-texture">
                 <div
                     className="grid grid-cols-10 gap-6 items-center lg:my-8 my-0"
@@ -43,7 +43,7 @@ const About = () => {
                 </div>
             </Container>
             {/* {showMore && <AboutMore setShowMore={setShowMore} />} */}
-        </>
+        </div>
     );
 };
 

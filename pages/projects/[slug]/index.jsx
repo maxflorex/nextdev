@@ -84,12 +84,12 @@ const page = ({ project, projects }) => {
 
             <main className="h-full mb-auto">
                 <section
-                    className="relative bg-cover bg-fixed bg-opacity-30 object-cover bg-center"
+                    className="relative bg-cover lg:bg-fixed bg-scroll bg-opacity-30 object-cover bg-center"
                     style={{ backgroundImage: `url(${project.banner.url})` }}
                 >
-                    <Container bg="bg-texture4 backdrop-blur">
+                    <Container bg="lg:bg-texture4 bg-texture2 backdrop-blur">
                         <div className="flex lg:flex-row flex-col lg:justify-between justify-center lg:items-end items-center relative gap-4">
-                            <div className="flex flex-col">
+                            <div className="flex flex-col items-center lg:items-start">
                                 <p className="text-mx-100">Projects</p>
                                 <h2 className="text-mx-300 drop-shadow-sm">
                                     {project.title}
@@ -111,7 +111,7 @@ const page = ({ project, projects }) => {
                         <span className="px-4 py-1 rounded-full bg-mx-500 text-mx-100 flex items-center bg-texture2 lg:text-sm text-xs">
                             <h4>Role</h4>
                         </span>
-                        <ul className="px-4 py-2 flex gap-4 p-2 bg-texture rounded-full items-center lg:text-sm text-xs">
+                        <ul className="px-4 py-2 flex gap-4 p-2 rounded-full items-center lg:text-sm text-xs bg-mx-100">
                             <li>UX/UI</li>
                             <li>.</li>
                             <li>Front-end</li>
@@ -126,22 +126,22 @@ const page = ({ project, projects }) => {
                     <div className="col-span-10 col-start-2">
                         <div className="grid grid-cols-10 gap-8">
                             <div className="lg:col-span-5 col-span-10 relative">
-                                <div className="sticky top-8">
+                                <div className="lg:sticky top-8">
                                     <div className="flex gap-4 items-center mb-8">
                                         <h3 className="font-bold text-xl">
                                             {project.title}
                                         </h3>
-                                        <div className="flex gap-2 items-center -mb-[6px] text-mx-400">
+                                        <div className="flex items-center -mb-[6px] text-mx-400 text-xl">
                                             <a
                                                 href={`https://${project.url}`}
-                                                className="hover:text-black"
+                                                className="hover:text-black hover:bg-mx-100 px-2 py-2 rounded-full text-xl leading-none"
                                                 target="_blank"
                                             >
                                                 <i className="ri-link-m"></i>
                                             </a>
                                             <a
                                                 href={project.github}
-                                                className="hover:text-black"
+                                                className="hover:text-black hover:bg-mx-100 px-2 py-2 rounded-full text-xl leading-none"
                                                 target={'_blank'}
                                             >
                                                 <i className="ri-github-fill"></i>
@@ -154,9 +154,8 @@ const page = ({ project, projects }) => {
                                     </p>
 
                                     <div className="flex flex-col lg:items-start items-center lg:mt-16 mt-8 mb-8 lg:mb-0 gap-4">
-                                        <p className="font-medium flex items-center gap-2 text-sm lg:pl-4 pl-0">
-                                            Tech Stack{' '}
-                                            <i className="ri-arrow-down-s-line"></i>
+                                        <p className="font-medium flex items-center text-sm lg:pl-4 pl-0">
+                                            Tech Stack
                                         </p>
                                         <div className="flex gap-4 bg-mx-100 px-6 py-2 rounded-full">
                                             {project.technologies.map(
@@ -188,7 +187,7 @@ const page = ({ project, projects }) => {
                                             transition={{
                                                 duration: 0.2,
                                                 ease: 'easeOut',
-                                                delay: 0.8 * i,
+                                                delay: 0.5 * i,
                                             }}
                                             className="max-h-64 relative w-auto h-auto flex justify-center"
                                             key={i}
