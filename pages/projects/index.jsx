@@ -34,25 +34,28 @@ const page = ({ projects }) => {
                         backgroundImage: `url(${projects.projects[random]?.banner.url})`,
                     }}
                 >
-                    <Container bg="bg-black/80 bg-texture4 backdrop-blur-sm" py="lg:py-32 py-16">
-                        <div className="flex lg:flex-row flex-col items-center justify-between gap-2">
-                            <div className="flex flex-col">
+                    <Container
+                        bg="bg-black/80 bg-texture4 backdrop-blur-sm"
+                        py="lg:py-32 py-24"
+                    >
+                        <div className="flex lg:flex-row flex-col items-center lg:justify-between gap-2">
+                            <div className="flex flex-col lg:items-start items-center">
                                 <h1 className="text-mx-300 drop-shadow-sm">
                                     - My Work -
                                 </h1>
-                                <p className="lg:w-2/3 w-full self-start text-mx-100">
-                                    I have been lucky enough to work on a
-                                    variety of different projects over the past
-                                    few years.{' '}
+                                <p className="lg:w-1/3 w-full self-start text-mx-100">
+                                    The past few years have presented me with
+                                    incredible opportunities to explore and grow
+                                    through various projects. {''}
                                     <span className="font-bold">
-                                        Here's a list of applications I made
-                                        recently!
+                                        I'm eager to share some of my most
+                                        cherished projects with you today.
                                     </span>
                                 </p>
                             </div>
                             <Link
                                 href="/"
-                                className="flex items-center gap-2 py-1 px-4 bg-white hover:bg-mx-300 rounded-full next-link lg:mr-0 mr-auto"
+                                className="flex items-center gap-2 py-1 px-4 bg-white hover:bg-mx-300 rounded-full next-link lg:mr-0 mt-4 lg:mt-0"
                             >
                                 <i className="ri-home-line"></i>
                                 <p>Home</p>

@@ -9,6 +9,7 @@ import ImageModal from '../../../components/ImageModal';
 import Logo from '../../../components/svg/Logo';
 import { hygraph, PROJECT, PROJECTS } from '../../api/graphcms';
 import Container from '../../../components/styled/Container';
+import NextProject from '../../../components/NextProject';
 
 export const getStaticPaths = async () => {
     const { projects } = await hygraph.request(PROJECTS);
@@ -179,9 +180,12 @@ const page = ({ project, projects }) => {
                                             <Image
                                                 src={image.url}
                                                 alt="Project mockups"
-                                                className="object-contain h-auto w-auto"
+                                                className="object-contain h-auto w-auto cursor-pointer"
                                                 width={640}
                                                 height={480}
+                                                blurDataURL={`/_next/image?url=${image.url}&w=16&q=1`}
+                                                placeholder="blur"
+                                                quality={50}
                                                 onClick={() => handleModal(i)}
                                             />
                                         </div>
@@ -191,33 +195,12 @@ const page = ({ project, projects }) => {
                     </div>
                 </section>
 
-                <Container bg2="grid grid-cols-2" bg="bg-mx-100">
-                    <div className="flex gap-4 items-center">
-                        <span className="border-t-2 border-mx-500 h-2 w-1/5" />
-                        <h3 className="text-2xl font-black lg:pb-0 pb-2">
-                            Next project
-                        </h3>
-                    </div>
-
-                    <div className="flex gap-2 lg:justify-end justify-start items-center">
-                        <button
-                            onClick={() => router.back()}
-                            className="bg-mx-300 rounded-full py-1 px-4 hover:bg-mx-500 active:scale-95 hover:text-white flex items-center gap-1"
-                        >
-                            <i className="ri-arrow-left-s-fill"></i>
-                            Back
-                        </button>
-                        <button
-                            className="bg-mx-300 rounded-full py-1 px-4 hover:bg-mx-500 active:scale-95 hover:text-white flex items-center gap-1"
-                            onClick={nextProject}
-                        >
-                            {currentIndex + 1 === projects.length
-                                ? `${projects[0].title}`
-                                : `${projects[currentIndex + 1].title}`}
-                            <i className="ri-arrow-right-s-fill"></i>
-                        </button>
-                    </div>
-                </Container>
+                <NextProject
+                    router={router}
+                    nextProject={nextProject}
+                    projects={projects}
+                    currentIndex={currentIndex}
+                />
 
                 <Footer2 />
             </main>

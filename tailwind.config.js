@@ -20,7 +20,7 @@ module.exports = {
 				'texture': "url('https://www.transparenttextures.com/patterns/dark-stripes-light.png')",
 				'texture2': 'url("https://www.transparenttextures.com/patterns/green-fibers.png")',
 				'texture3': 'url("https://www.transparenttextures.com/patterns/grilled-noise.png")',
-				'texture4': 'url("https://www.transparenttextures.com/patterns/subtle-carbon.png")'
+				'texture4': 'url("https://www.transparenttextures.com/patterns/black-orchid.png")'
 			}
 		},
 		fontFamily: {
@@ -30,4 +30,4 @@ module.exports = {
 	},
 
 	plugins: [],
-} 
+}

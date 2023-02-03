@@ -1,6 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import Project from './Project';
 import { MyContext } from './context/Context';
+import Image from 'next/image';
 
 const ProjectList = () => {
     const { projects } = useContext(MyContext);
@@ -21,11 +22,20 @@ const ProjectList = () => {
                             <Project project={project} i={i} />
 
                             {/* BANNER */}
-                            <img
-                                src={project.banner.url}
-                                alt="Project banner"
-                                className="group-hover:translate-x-0 translate-x-full w-1/2  absolute right-0 z-10 transition-all duration-500 ease-in-out h-full object-cover"
-                            />
+                            <div className="group-hover:translate-x-0 translate-x-full w-1/2  absolute right-0 z-10 transition-all duration-500 ease-in-out h-full object-cover">
+                                <Image
+                                    src={project.banner.url}
+                                    alt="Project banner"
+                                    fill
+                                    blurDataURL={`/_next/image?url=${project.banner.url}&w=16&q=1`}
+                                    placeholder="blur"
+                                    quality={50}
+                                    className="object-cover"
+                                    sizes="(min-width: 60em) 24vw,
+                                    (min-width: 28em) 45vw,
+                                    100vw"
+                                />
+                            </div>
 
                             {/* TECH */}
                             <div className="absolute bottom-0 mx-auto flex items-center justify-center w-full group-hover:-translate-y-4 translate-y-16 transition-all group-hover:delay-500 z-20 ease-in-out duration-200">
@@ -51,9 +61,6 @@ const ProjectList = () => {
                         </div>
                     );
                 })}
-            {/* <div className="w-full flex justify-center">
-                <button className="btn">+ Projects </button>
-            </div> */}
         </>
     );
 };

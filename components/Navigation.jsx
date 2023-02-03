@@ -10,7 +10,7 @@ const Navigation = ({ show }) => {
     };
 
     return (
-        <header className="grid grid-cols-12 -mb-24 z-20">
+        <header className="grid grid-cols-12 -mb-24 z-[100] absolute top-0 left-0 w-full">
             <nav className="col-start-2 col-span-10 flex justify-between py-4 items-center z-10 text-mx-100">
                <img src="/mx-logo-blue.svg" alt="logo" className='w-12' />
                 <div className="flex gap-6">
