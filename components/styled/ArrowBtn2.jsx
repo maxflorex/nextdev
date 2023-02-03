@@ -6,7 +6,7 @@ const ArrowBtn = ({ title, id }) => {
     return (
         <Link
             href={`/projects/${id}`}
-            className="group/btn2 flex items-center gap-2 rounded-full transition-all duration-100 hover:drop-shadow drop-shadow-none px-4 py-2 active:scale-95"
+            className="group/btn2 flex items-center gap-2 rounded-full transition-all duration-100 hover:drop-shadow drop-shadow-none px-4 py-2 active:scale-95 relative"
         >
             <h1 className="text-xl font-bold text-mx-500 z-40">{title}</h1>
             <i className="ri-arrow-right-line text-mx-500 z-40"></i>

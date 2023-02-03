@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion';
 
 const ContactModal = ({ setShow }) => {
     const form = useRef();
@@ -37,10 +38,18 @@ const ContactModal = ({ setShow }) => {
     };
 
     return (
-        <div className="h-screen w-screen fixed top-0 z-30 overflow-hidden box-content m-auto flex items-center justify-center bg-white/10 backdrop-blur-sm">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{opacity: 1}}
+            transition={{duration: 0.5}}
+            className="h-screen w-screen fixed top-0 z-30 overflow-hidden box-content m-auto flex items-center justify-center bg-white/10 backdrop-blur-sm"
+        >
             <div className="flex flex-col justify-center items-center bg-mx-500 w-5/6 h-5/6 relative rounded">
                 {/* FORM */}
-                <form
+                <motion.form
+                    initial={{ translateY: 100, opacity: 0 }}
+                    animate={{ translateY: 0, opacity: 1 }}
+                    transition={{ duration: 1, ease: 'linear', delay: 0.5, power: 0.2 }}
                     ref={form}
                     onSubmit={sendEmail}
                     action=""
@@ -68,7 +77,7 @@ const ContactModal = ({ setShow }) => {
                     >
                         Send
                     </button>
-                </form>
+                </motion.form>
 
                 {/* SOCIAL MEDIA */}
                 <div className="mt-16 text-mx-100 flex flex-col items-center">
@@ -103,7 +112,7 @@ const ContactModal = ({ setShow }) => {
                     <i className="ri-close-fill p-2 bg-mx-300 rounded hover:bg-mx-400 close" />
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

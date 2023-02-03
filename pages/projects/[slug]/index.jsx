@@ -10,6 +10,7 @@ import Logo from '../../../components/svg/Logo';
 import { hygraph, PROJECT, PROJECTS } from '../../api/graphcms';
 import Container from '../../../components/styled/Container';
 import NextProject from '../../../components/NextProject';
+import { motion } from 'framer-motion';
 
 export const getStaticPaths = async () => {
     const { projects } = await hygraph.request(PROJECTS);
@@ -50,7 +51,6 @@ const page = ({ project, projects }) => {
     const [expandImage, setExpandImage] = useState(false);
     const [index, setIndex] = useState(0);
     const currentIndex = projects.findIndex((obj) => obj.slug == project.slug);
-    const screenshots = project.webMockups.concat(project.mobileMockups);
     const router = useRouter();
 
     const nextProject = (e) => {
@@ -68,6 +68,12 @@ const page = ({ project, projects }) => {
         setIndex(i);
     };
 
+    const screenshots = [
+        ...project.screenMockups,
+        ...project.webMockups,
+        ...project.mobileMockups
+    ];
+
     return (
         <div className="flex flex-col min-h-screen justify-between box-border">
             <nav className="col-start-2 col-span-10 flex justify-center py-4 items-center">
@@ -78,14 +84,17 @@ const page = ({ project, projects }) => {
 
             <main className="h-full mb-auto">
                 <section
-                    className="relative bg-cover bg-fixed bg-opacity-30 object-cover"
+                    className="relative bg-cover bg-fixed bg-opacity-30 object-cover bg-center"
                     style={{ backgroundImage: `url(${project.banner.url})` }}
                 >
-                    <Container bg="bg-mx-500/80 bg-texture4 ">
+                    <Container bg="bg-texture4 backdrop-blur">
                         <div className="flex lg:flex-row flex-col lg:justify-between justify-center lg:items-end items-center relative gap-4">
-                            <h2 className="text-mx-300 drop-shadow-sm">
-                                - {project.title} -
-                            </h2>
+                            <div className="flex flex-col">
+                                <p className="text-mx-100">Projects</p>
+                                <h2 className="text-mx-300 drop-shadow-sm">
+                                    {project.title}
+                                </h2>
+                            </div>
                             <button
                                 onClick={() => router.back()}
                                 className="flex items-center gap-2 py-1 px-4 bg-white hover:bg-mx-300 rounded-full next-link"
@@ -173,7 +182,14 @@ const page = ({ project, projects }) => {
                             <div className="lg:col-span-5 col-span-10 flex flex-col gap-8 mb-8">
                                 {screenshots &&
                                     screenshots.map((image, i) => (
-                                        <div
+                                        <motion.div
+                                            initial={{ scale: 1.1, opacity: 0 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            transition={{
+                                                duration: 0.2,
+                                                ease: 'easeOut',
+                                                delay: 0.8 * i,
+                                            }}
                                             className="max-h-64 relative w-auto h-auto flex justify-center"
                                             key={i}
                                         >
@@ -188,7 +204,7 @@ const page = ({ project, projects }) => {
                                                 quality={50}
                                                 onClick={() => handleModal(i)}
                                             />
-                                        </div>
+                                        </motion.div>
                                     ))}
                             </div>
                         </div>

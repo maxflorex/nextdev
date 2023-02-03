@@ -10,6 +10,7 @@ import Footer from '../components/Footer';
 import ContactModal from '../components/styled/ContactModal';
 import MyProvider from '../components/context/Provider';
 import Hero from '../components/Hero';
+import { AnimatePresence } from 'framer-motion';
 
 export const getStaticProps = async () => {
     const data = await hygraph.request(PROJECTS);
@@ -31,7 +32,9 @@ const page = ({ data }) => {
             <Intro />
             <ProjectList />
             <About />
-            {showContact && <ContactModal setShow={setShowContact} />}
+            <AnimatePresence>
+                {showContact && <ContactModal setShow={setShowContact} />}
+            </AnimatePresence>
             <Footer setShow={setShowContact} />
         </MyProvider>
     );
