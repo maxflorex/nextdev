@@ -198,10 +198,9 @@ const page = ({ project, projects }) => {
                                                 className="object-contain h-auto w-auto cursor-pointer"
                                                 width={640}
                                                 height={480}
-                                                blurDataURL={`/_next/image?url=${image.url}&w=16&q=1`}
-                                                placeholder="blur"
-                                                quality={50}
+                                                quality={30}
                                                 onClick={() => handleModal(i)}
+                                                loading='lazy'
                                             />
                                         </motion.div>
                                     ))}

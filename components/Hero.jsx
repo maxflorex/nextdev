@@ -10,7 +10,7 @@ const Hero = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
                 <div className="flex flex-col lg:gap-4 gap-2 text-mx-100 z-20">
                     <h1 className="text-xl">
-                        <span className="font-thin">Hello world!</span> I'm Max:
+                        <span className="font-thin">Hello world!</span> I'm Max
                     </h1>
 
                     <h1 className="font-extrabold text-transparent text-6xl bg-clip-text bg-gradient-to-r from-mx-300 to-mx-400">
