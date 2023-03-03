@@ -28,4 +28,5 @@ Navigate to http://localhost:3000 in your browser to view the deployed portfolio
 Conclusion
 
 
-## The personal portfolio repository is a Next JS application built with Hygraph CMS. It follows a simple folder structure and requires environment variables to be set for deployment.
+> The personal portfolio repository is a Next JS application built with Hygraph CMS.
+> It follows a simple folder structure and requires environment variables to be set for deployment.
